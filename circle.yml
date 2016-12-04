@@ -3,11 +3,14 @@ machine:
   services:
     - docker
 
+checkout:
+  post:
+    - git clone https://github.com/andrewrothstein/bash-dcb
+    - export PATH=$PATH:bash-dcb
+    
 dependencies:
   override:
     - docker info
-    - git clone https://github.com/andrewrothstein/bash-dcb bash-dcb
-    - export PATH=$PATH:./bash-dcb
     - dcb-circleci-build-fixedsubdirs.sh:
         parallel: true
 
