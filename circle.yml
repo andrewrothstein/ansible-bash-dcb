@@ -6,11 +6,13 @@ machine:
 checkout:
   post:
     - git clone https://github.com/andrewrothstein/bash-dcb
+    - echo $(pwd)
     - export PATH=$PATH:bash-dcb
     
 dependencies:
   override:
     - docker info
+    - echo $PATH
     - dcb-circleci-build-fixedsubdirs.sh:
         parallel: true
 
