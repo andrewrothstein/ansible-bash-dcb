@@ -1,0 +1,38 @@
+---
+galaxy_info:
+  author: Andrew Rothstein
+  description: install dcb-*.sh
+  company: BlackRock
+  license:
+    - MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Alpine
+      versions:
+        - all
+  galaxy_tags:
+    - bash
+    - docker
+    - build
+
+dependencies:
+  - role: andrewrothstein.binpack
+    binpack_app: bash-dcb
+    binpack_app_ver: v1.0.0
+    binpack_files:
+      - f: dcb-env.sh
+      - f: dcb-build.sh
+      - f: dcb-test.sh
+      - f: dcb-circleci-test-fixedsubdirs.sh
+      - f: dcb-circleci-build-fixedsubdirs.sh
+
+  

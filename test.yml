@@ -1,0 +1,12 @@
+---
+- hosts: all
+  roles:
+    - role: '{{playbook_dir}}'
+      binpack_app: bash-dcb
+      binpack_app_ver: v1.0.0
+      binpack_files:
+        - f: dcb-env.sh
+        - f: dcb-build.sh
+        - f: dcb-test.sh
+        - f: dcb-circleci-test-fixedsubdirs.sh
+        - f: dcb-circleci-build-fixedsubdirs.sh
