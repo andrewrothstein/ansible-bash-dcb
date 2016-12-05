@@ -26,6 +26,7 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.binpack
+    binpack_install_dir: /usr/local/bin
     binpack_app: bash-dcb
     binpack_app_ver: v1.0.0
     binpack_files:
